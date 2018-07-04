@@ -33,8 +33,8 @@ function resetCompScore() {
 
 function win(userChoice, computerChoice) {
   userScore++;
-  userScore_span.innerHTML = userScore + ' ';
-  compScore_span.innerHTML = ' ' + compScore;
+  userScore_span.innerHTML = ` ${userScore}`;
+  compScore_span.innerHTML = ` ${compScore}`;
   const smallUserWord = '(you)'.fontsize(25);
   const smallOppWord = '(opponent)'.fontsize(25);
   result_div.innerHTML = `${convertToWord(userChoice)} ${smallUserWord} beats ${convertToWord(computerChoice)} ${smallOppWord}. You win!`;
@@ -42,8 +42,8 @@ function win(userChoice, computerChoice) {
 
 function lose(userChoice, computerChoice) {
   compScore++;
-  userScore_span.innerHTML = userScore + ' ';
-  compScore_span.innerHTML = ' ' + compScore;
+  userScore_span.innerHTML = ` ${userScore}`;
+  compScore_span.innerHTML = ` ${compScore}`;
   const smallUserWord = '(you)'.fontsize(25);
   const smallOppWord = '(opponent)'.fontsize(25);
   result_div.innerHTML = `${convertToWord(userChoice)} ${smallUserWord} loses to ${convertToWord(computerChoice)} ${smallOppWord}. You lose!`;
@@ -52,8 +52,6 @@ function lose(userChoice, computerChoice) {
 function draw(userChoice, computerChoice) {
   result_div.innerHTML = `It's a draw! You both picked ${convertToWord(userChoice)}`;
 }
-
-
 
 function game(userChoice) {
   const computerChoice = getComputerChoice();
@@ -77,7 +75,6 @@ function game(userChoice) {
 }
 /* if user clicks on buttons (created in HTML as divs), then will run function game ('div user clicked on')*/
 function main() {
-
   reset.addEventListener('click', function () {
     resetUserScore();
     resetCompScore();
@@ -94,7 +91,6 @@ function main() {
   s_div.addEventListener('click', function () {
     game('s');
   })
-
 }
 
 main();
