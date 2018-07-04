@@ -1,0 +1,24 @@
+{
+  "name": "Pokemon-Rock-Paper-Scissors-Game",
+  "version": "1.0.0",
+  "description": "Traditional Rock Paper Scissors game using 1st generation starter Pokemons.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannyyaaj/Pokemon-Rock-Paper-Scissors-Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannyyaaj/Pokemon-Rock-Paper-Scissors-Game/issues"
+  },
+  "homepage": "https://github.com/dannyyaaj/Pokemon-Rock-Paper-Scissors-Game#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
