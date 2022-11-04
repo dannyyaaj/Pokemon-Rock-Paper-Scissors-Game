@@ -1,13 +1,13 @@
 let userScore = 0;
 let compScore = 0;
-let userScore_span = document.getElementById('user-score');
-let compScore_span = document.getElementById('comp-score');
+const userScore_span = document.getElementById('user-score');
+const compScore_span = document.getElementById('comp-score');
 const scoreBoard_div = document.querySelector('.score-board');
-let result_div = document.querySelector('p');
+const result_div = document.querySelector('p');
 const b_div = document.getElementById('b');
 const c_div = document.getElementById('c');
 const s_div = document.getElementById('s');
-let reset = document.getElementById('reset');
+const reset = document.getElementById('reset');
 
 function getComputerChoice() {
   const choices = ['b', 'c', 's'];
