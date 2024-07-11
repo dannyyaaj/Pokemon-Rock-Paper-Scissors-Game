@@ -11,14 +11,22 @@ const reset = document.getElementById('reset');
 
 function getComputerChoice() {
   const choices = ['b', 'c', 's'];
-  const randomNum = (Math.floor(Math.random() * 3));
-  return choices[randomNum];
+  const randomNumber = (Math.floor(Math.random() * 3));
+  return choices[randomNumber];
 }
 
 function convertToWord(letter) {
-  if (letter === 'b') return 'Bulbasaur';
-  if (letter === 'c') return 'Charmander';
-  return 'Squirtle';
+  switch (letter) {
+    case 'b':
+      return 'Bulbasaur'
+      break;
+    case 'c':
+      return 'Charmander'
+      break;
+    case 's':
+      return 'Squirtle';
+      break;
+  }
 }
 
 function resetUserScore() {
@@ -35,8 +43,8 @@ function win(userChoice, computerChoice) {
   userScore++;
   userScore_span.innerHTML = ` ${userScore}`;
   compScore_span.innerHTML = ` ${compScore}`;
-  const smallUserWord = '(you)'.fontsize(25);
-  const smallOppWord = '(opponent)'.fontsize(25);
+  const smallUserWord = '(you)';
+  const smallOppWord = '(opponent)';
   result_div.innerHTML = `${convertToWord(userChoice)} ${smallUserWord} beats ${convertToWord(computerChoice)} ${smallOppWord}. You win!`;
 }
 
@@ -44,8 +52,8 @@ function lose(userChoice, computerChoice) {
   compScore++;
   userScore_span.innerHTML = ` ${userScore}`;
   compScore_span.innerHTML = ` ${compScore}`;
-  const smallUserWord = '(you)'.fontsize(25);
-  const smallOppWord = '(opponent)'.fontsize(25);
+  const smallUserWord = '(you)';
+  const smallOppWord = '(opponent)';
   result_div.innerHTML = `${convertToWord(userChoice)} ${smallUserWord} loses to ${convertToWord(computerChoice)} ${smallOppWord}. You lose!`;
 }
 
@@ -75,20 +83,20 @@ function game(userChoice) {
 }
 /* if user clicks on buttons (created in HTML as divs), then will run function game ('div user clicked on')*/
 function main() {
-  reset.addEventListener('click', function () {
+  reset.addEventListener('click', () => {
     resetUserScore();
     resetCompScore();
   });
 
-  b_div.addEventListener('click', function () {
+  b_div.addEventListener('click', () => {
     game('b');
   })
 
-  c_div.addEventListener('click', function () {
+  c_div.addEventListener('click', () => {
     game('c');
   })
 
-  s_div.addEventListener('click', function () {
+  s_div.addEventListener('click', () => {
     game('s');
   })
 }
