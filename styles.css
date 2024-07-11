@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Asap');
+@import url("https://fonts.googleapis.com/css?family=Asap");
 
 * {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -16,7 +16,7 @@ header {
 }
 
 header > h1 {
-  color: #25272E;
+  color: #25272e;
   text-align: center;
   font-family: Asap, sans-serif;
 }
@@ -25,7 +25,7 @@ header > h1 {
   border: 3px solid white;
   width: 200px;
   margin: 20px auto;
-  color:white;
+  color: white;
   font-size: 46px;
   padding: 15px 20px;
   font-family: Asap, sans-serif;
@@ -33,7 +33,7 @@ header > h1 {
   position: relative;
 }
 .badge {
-  background: #ED634E;
+  background: #ed634e;
   color: white;
   font-size: 20px;
   padding: 2px 10px;
@@ -46,6 +46,7 @@ header > h1 {
   top: auto;
   left: -2.8em;
 }
+
 #comp-label {
   position: absolute;
   top: auto;
@@ -61,7 +62,7 @@ header > h1 {
   width: 100px;
   padding: 10px;
   margin: 15px 0;
-  background: #ED634E;
+  background: #ed634e;
   border: none;
   color: white;
   font-size: 20px;
@@ -75,31 +76,49 @@ header > h1 {
 
 .result {
   font-size: 55px;
-  color: #FFFEFF;
+  color: #fffeff;
 }
 
 .result > p {
   text-align: center;
   font-weight: bold;
-  font-family: Asap,sans-serif;
+  font-family: Asap, sans-serif;
 }
 
 .choices {
- text-align: center;
- margin: 50px 0;
+  text-align: center;
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .choice {
-  display:inline-block;
+  display: inline-block;
+  margin: 1.25em 3em;
+  padding: 2.5em 3em;
+  position: relative;
+}
+
+.choice::before {
+  content: "";
+  position: absolute;
   border: 4px solid white;
   border-radius: 50%;
-  margin: 1em 1.25em;
-  padding: 2.5em 3em;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  background: transparent;
+  z-index: -1;
 }
 
 img {
-  display:inline-block;
-  border-radius: 50%;
+  display: inline-block;
+  max-width: 200px;
 }
 
 .choice:hover {
@@ -107,18 +126,20 @@ img {
   transition: all 0.3s ease;
 }
 
-#b:hover {
-  background: forestgreen;
-}
-#c:hover {
-  background: firebrick;
-}
-#s:hover {
-  background: royalblue;
+.choice > img:hover {
+  transform: scale(1.125);
 }
 
-.choice > img:hover {
-  transform: scale(1.2);
+#b:hover::before {
+  background: forestgreen;
+}
+
+#c:hover::before {
+  background: firebrick;
+}
+
+#s:hover::before {
+  background: royalblue;
 }
 
 #action-message {
@@ -127,4 +148,10 @@ img {
   font-weight: bold;
   font-size: 50px;
   font-family: Asap, sans-serif;
+}
+
+@media screen and (min-width: 1200px) {
+  .choices {
+    flex-direction: row;
+  }
 }
